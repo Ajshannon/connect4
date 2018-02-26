@@ -1,0 +1,35 @@
+/* .row {
+    width:50px;
+    height: 50px;
+    border: 2px solid black;
+    margin: 2px;
+    
+} */
+
+.col {
+    width: 75px;
+    height: calc(75px * 6);
+    display: flex;
+    flex-flow: column-reverse nowrap;
+    border: 2px solid black;
+    
+}
+#gameBoard {
+    display: flex;
+    flex-direction: row;
+}
+.blackChip {
+    border-radius: 50%;
+    background-color:black;
+    width: 70px;
+    height: 70px;
+    margin: 2.5px auto;
+}
+.redChip {
+    border-radius: 50%;
+    background-color: red;
+    width: 70px;
+    height: 70px;
+    margin: 2.5px auto;
+}
+
