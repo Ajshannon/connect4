@@ -6,6 +6,10 @@ const grid = [
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
 ];
+
+const modal = document.getElementById('myModal');
+const btn = document.getElementById("myBtn");
+const span = document.getElementsByClassName("close")[0];
 const numberOfCols = 7;
 const gameBoard = document.getElementById('gameBoard');
 let currentPlayer = "redChip";
@@ -39,7 +43,7 @@ for (let i = 0; i < cells.length; i++) {
 }
 
 function handleClick(event) {
-    const column = event.target;
+    const column = event.currentTarget;
 
     //prevents from adding more than 6 children to thing
     if (column.childElementCount == 6) {
@@ -48,7 +52,8 @@ function handleClick(event) {
 
     let disc = document.createElement('div');
     let row = column.childElementCount
-    if (column.className == "col") {
+    console.log(column.classList)
+    if (column.classList.contains("col")) {
         if (currentPlayer === "redChip") {
             grid[5 - row][column.id[4]] = 1;
             disc.classList.add(currentPlayer);
@@ -64,7 +69,7 @@ function handleClick(event) {
         }
         column.appendChild(disc);
     }
-    checkWinner();
+    setTimeout(500, checkWinner);
 }
 
 function checkWinner() {
@@ -86,6 +91,7 @@ function checkWinner() {
                 // Check the next two cells for the same value
                 if (cell === grid[y][x + 1] && cell === grid[y][x + 2] && cell === grid[y][x + 3]) {
                     console.log("4 in a row horizontal found at " + (x + 1) + ":" + (y + 1))
+                    alert("4 in a row horizontal found at " + (x + 1) + ":" + (y + 1));
                 }
             }
         }
@@ -104,7 +110,8 @@ function checkWinner() {
 
                 // Check the next two cells for the same value
                 if (cell === grid[y + 1][x] && cell === grid[y + 2][x] && cell === grid[y + 3][x]) {
-                    console.log("4 in a row vertical found at " + (x + 1) + ":" + (y + 1))
+                    alert("4 in a row vertical found at " + (x + 1) + ":" + (y + 1));
+                    
                 }
             }
         }
@@ -123,7 +130,7 @@ function checkWinner() {
 
                 // Check the next two cells for the same value
                 if (cell === grid[y + 1][x + 1] && cell === grid[y + 2][x + 2] && cell === grid[y + 3][x + 3]) {
-                    console.log("4 in a row down-right found at " + (x + 1) + ":" + (y + 1))
+                    alert("4 in a row down-right found at " + (x + 1) + ":" + (y + 1));
                 }
             }
         }
@@ -143,7 +150,7 @@ function checkWinner() {
 
                 // Check the next two cells for the same value
                 if (cell === grid[y - 1][x + 1] && cell === grid[y - 2][x + 2] && cell === grid[y - 3][x + 3]) {
-                    console.log("4 in a row down-left found at " + (x + 1) + ":" + (y + 1))
+                    alert("4 in a row down-left found at " + (x + 1) + ":" + (y + 1));
                 }
             }
         }

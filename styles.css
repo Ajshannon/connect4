@@ -5,31 +5,84 @@
     margin: 2px;
     
 } */
+html {
+    background-color: black;
+}
+#body {
+    display: flex;
+    width: 800px;
+    margin: 0 auto;
+    justify-content: center;
+    
+}
+
+#main {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+h1 {
+    color: white;
+}
 
 .col {
     width: 75px;
     height: calc(75px * 6);
     display: flex;
     flex-flow: column-reverse nowrap;
-    border: 2px solid black;
-    
+    border: 2px solid white;
 }
+
 #gameBoard {
     display: flex;
     flex-direction: row;
 }
+
 .blackChip {
+    border-radius: 50%;
+    background-color: black;
+    
+    width: 70px;
+    height: 70px;
+    margin: 2.5px auto;
+    box-shadow: 0px 0px 40px #fefefe;
+}
+
+.redChip {
     border-radius: 50%;
     background-color:black;
     width: 70px;
     height: 70px;
     margin: 2.5px auto;
-}
-.redChip {
-    border-radius: 50%;
-    background-color: red;
-    width: 70px;
-    height: 70px;
-    margin: 2.5px auto;
+    box-shadow: 0px 0px 40px red;
+
 }
 
+/* modal */
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
